@@ -34,6 +34,11 @@ section{scroll-margin-top:84px}
 .deliverable-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
 .deliverable-list div{background:#f5f8fc;border:1px solid var(--line);border-radius:8px;padding:11px;font-size:14px}
 .tag{display:inline-block;background:#eaf3fa;color:#15598b;border-radius:999px;padding:4px 10px;font-size:11px;font-weight:700}
+.small-link{color:var(--blue);font-weight:700;text-decoration:underline}
+#free-preview ul{padding-left:20px;color:#475569;font-size:14px}
+#free-preview .card{padding:22px}
+#methodology .card{padding:22px}
+@media(max-width:760px){#free-preview .grid{grid-template-columns:1fr}}
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .faq-grid .card{padding:20px}
 @media(max-width:760px){.deliverable-list,.faq-grid{grid-template-columns:1fr}}
@@ -297,7 +302,7 @@ form{grid-template-columns:1fr}
 <h2>A structured deliverable, not just a list of names</h2>
 <p class="muted">Each research record is organized to help your team compare potential candidates and trace key information back to its public source.</p>
 <div class="deliverable-list"><div>Company profile and location</div><div>Product-fit assessment</div><div>Supplier-type evidence classification</div><div>Public contact information, where available</div><div>Evidence notes and source URLs</div><div>Research date and information gaps</div><div>Five-dimension match score</div><div>Questions to ask the supplier</div></div>
-<p class="note">The downloadable CSV is an illustrative template with clearly marked example rows, not a verified supplier database or client deliverable.</p>
+<p class="note">The downloadable CSV is a blank working template, not a verified supplier database or completed client report.</p>
 <a class="btn" href="sample-supplier-shortlist.csv" download>Download research data template</a> <a class="small-link" href="research-methodology.html">View scoring methodology</a>
 </div>
 <div class="table">
@@ -469,9 +474,9 @@ The information above is based on publicly available company website description
 <div>
 <label for="package">Request type</label>
 <select id="package" name="package">
-<option>Free one-supplier preview (subject to qualification)</option>
+<option selected>Free one-supplier preview (subject to qualification)</option>
 <option>Basic - $10</option>
-<option selected>Standard - $25</option>
+<option>Standard - $25</option>
 <option>Premium - $50</option>
 <option>Custom research - please quote</option>
 <option>Not sure - please advise</option>
