@@ -77,6 +77,35 @@ form{grid-template-columns:1fr}
 #request .form-note a{color:var(--blue);font-weight:700;text-decoration:underline}
 #request .warning{max-width:790px;margin:22px auto 0;line-height:1.6}
 @media(max-width:760px){#request{padding:48px 0}#request .formbox{padding:7px;border-radius:12px}#request iframe{height:1650px}#request .form-note{display:block;text-align:center;padding:14px 8px 6px}#request .form-note p+p{margin-top:8px}}
+
+/* Dual inquiry options */
+#request{background:linear-gradient(180deg,#eef4fa 0%,#f8fafc 100%);padding:76px 0 70px}
+#request .head{max-width:760px;margin-bottom:30px}
+#request .contact-options{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto 34px}
+#request .contact-option{background:#fff;border:1px solid #dbe5ef;border-radius:16px;padding:26px;box-shadow:0 12px 32px rgba(16,36,58,.06)}
+#request .option-label{font-size:11px;font-weight:800;letter-spacing:1.3px;color:var(--blue);margin-bottom:10px}
+#request .contact-option h3{font-size:21px;color:var(--navy);margin:0 0 8px}
+#request .contact-option p{min-height:78px}
+#request .contact-option .btn{margin:8px 0 10px}
+#request .email-option{background:#f8fbff}
+#request .email-btn{background:#087e65}
+#request .email-btn:hover{background:#066b56}
+#request .questionnaire{max-width:900px;margin:0 auto;background:#fff;border:1px solid #dbe5ef;border-radius:18px;padding:24px;box-shadow:0 18px 48px rgba(16,36,58,.08);scroll-margin-top:90px}
+#request .questionnaire-heading{text-align:center;margin-bottom:16px}
+#request .questionnaire-heading h3{font-size:22px;color:var(--navy);margin:0 0 5px}
+#request iframe{display:block;width:100%;height:1480px;border:0;border-radius:10px;background:#fff}
+#request .form-fallback{text-align:center;margin:12px 0 0}
+#request .form-fallback a{color:var(--blue);font-weight:700;text-decoration:underline}
+#request .warning{max-width:900px;margin:22px auto 0;line-height:1.6}
+@media(max-width:760px){
+ #request{padding:48px 0}
+ #request .contact-options{grid-template-columns:1fr;gap:14px}
+ #request .contact-option{padding:21px}
+ #request .contact-option p{min-height:0}
+ #request .questionnaire{padding:9px;border-radius:12px}
+ #request .questionnaire-heading{padding:10px 8px}
+ #request iframe{height:1650px}
+}
 </style>
 </head>
 
@@ -280,21 +309,42 @@ The information above is based on publicly available company website description
 <div class="wrap">
 <div class="head">
 <div class="eyebrow">START YOUR RESEARCH</div>
-<h2>Tell us what you need to source</h2>
-<p class="muted">Complete the short consultation form below. Share your product, target market and supplier requirements so we can understand the research scope.</p>
+<h2>Choose how to contact us</h2>
+<p class="muted">Use the online questionnaire or send us an email. Both options are suitable for an initial supplier research request.</p>
 </div>
-<div class="formbox">
+
+<div class="contact-options">
+<div class="contact-option">
+<div class="option-label">OPTION 01</div>
+<h3>Fill in the questionnaire</h3>
+<p class="muted">Best if you want to provide product details, target market, quantity and supplier requirements in a structured format.</p>
+<a class="btn" href="#supplier-questionnaire">Complete the questionnaire</a>
+<p class="note">The form opens below on this page.</p>
+</div>
+
+<div class="contact-option email-option">
+<div class="option-label">OPTION 02</div>
+<h3>Send us an email</h3>
+<p class="muted">Prefer writing freely? Email us your sourcing requirements and any questions.</p>
+<a class="btn email-btn" href="mailto:tietouwaxs@gmail.com?subject=China%20Supplier%20Research%20Request&amp;body=Hello%20China%20Supplier%20Finder%2C%0A%0AI%20am%20looking%20for%20suppliers%20for%3A%0AProduct%3A%0ATarget%20market%3A%0ASpecifications%3A%0AEstimated%20quantity%3A%0APreferred%20supplier%20type%3A%0AOther%20requirements%3A%0A%0AThank%20you.">Email us</a>
+<p class="note">Your email application will open with a prepared message.</p>
+</div>
+</div>
+
+<div id="supplier-questionnaire" class="questionnaire">
+<div class="questionnaire-heading">
+<h3>Supplier research questionnaire</h3>
+<p class="muted">Complete the form below. If it does not load, use the separate-page link.</p>
+</div>
 <iframe
   title="China Supplier Finder consultation form"
   src="https://docs.google.com/forms/d/e/1FAIpQLSdMiiS1MtlDkCC95CrBZYX9a3sFzUiPAPuJFcHnXcduPvG07g/viewform?embedded=true"
   loading="lazy">
   Loading consultation form…
 </iframe>
-<div class="form-note">
-<p class="note">Prefer a separate page? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMiiS1MtlDkCC95CrBZYX9a3sFzUiPAPuJFcHnXcduPvG07g/viewform" target="_blank" rel="noopener noreferrer">Open the form in a new tab</a>.</p>
-<p class="note">Submitting this form is a consultation request, not a paid order.</p>
+<p class="note form-fallback"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMiiS1MtlDkCC95CrBZYX9a3sFzUiPAPuJFcHnXcduPvG07g/viewform" target="_blank" rel="noopener noreferrer">Open the questionnaire in a new tab</a>.</p>
 </div>
-</div>
+
 <div class="warning">
 <strong>Research scope:</strong> This service is desk research based on publicly available information. We do not certify, audit, inspect or guarantee suppliers, products, factories, prices, compliance status or transactions. Buyers should independently verify suppliers, request samples and conduct appropriate due diligence before payment or purchase.
 </div>
