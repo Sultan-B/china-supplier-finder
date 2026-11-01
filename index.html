@@ -1,25 +1,308 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Chinese supplier research for international buyers.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="China Supplier Finder - Independent research into publicly available Chinese supplier information.">
+<meta name="theme-color" content="#10243a">
 <title>China Supplier Finder | Supplier Research</title>
 <style>
-:root{--navy:#10243a;--blue:#1769aa;--ink:#172536;--muted:#64748b;--bg:#f5f8fc;--line:#e2e8f0}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.6 Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}.wrap{width:min(1080px,92%);margin:auto}header{background:#fff;border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;color:var(--navy);font-size:19px}.brand span{color:var(--blue)}nav{display:flex;gap:22px;font-size:14px}a{color:inherit;text-decoration:none}.btn{display:inline-block;background:var(--blue);color:white;padding:12px 19px;border-radius:8px;font-weight:700;border:0;cursor:pointer}.hero{background:linear-gradient(120deg,#10243a,#174e78);color:white;padding:76px 0}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}.eyebrow{color:#9dd9ff;text-transform:uppercase;font-size:12px;font-weight:800;letter-spacing:1.4px}h1{font-size:clamp(36px,5vw,54px);line-height:1.1;margin:14px 0 18px}.hero p{color:#d9e8f5;font-size:18px;max-width:640px}.panel,.card{background:white;border:1px solid var(--line);border-radius:14px;padding:24px}.hero .panel{color:var(--ink)}.tick{margin:10px 0;color:#334155}.tick b{color:#087e65;margin-right:8px}section{padding:64px 0}.head{text-align:center;max-width:680px;margin:0 auto 34px}h2{font-size:32px;line-height:1.2;color:var(--navy);margin:0 0 10px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card h3{color:var(--navy);margin:0 0 8px}.price{font-size:34px;font-weight:800;color:var(--navy);margin:6px 0}.card ul{padding-left:20px;color:#475569;min-height:110px;font-size:14px}.card .btn{width:100%;text-align:center}.featured{border:2px solid var(--blue)}.sample{background:#eaf3fa}.samplegrid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.table{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px}.tr{display:grid;grid-template-columns:1.1fr 1fr .8fr;padding:11px 13px;border-bottom:1px solid var(--line);gap:8px}.tr:first-child{font-weight:bold;background:#f1f6fb}.formbox{max-width:760px;margin:auto;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:25px}form{display:grid;grid-template-columns:1fr 1fr;gap:15px}label{display:block;font-size:13px;font-weight:bold;margin-bottom:5px}input,select,textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font:inherit;background:#fff}textarea{min-height:120px}.full{grid-column:1/-1}.note{font-size:12px;color:var(--muted)}.warning{margin-top:22px;padding:15px;border:1px solid #f0d69b;background:#fff8e8;color:#75531c;border-radius:9px;font-size:13px}footer{background:var(--navy);color:#d8e4ee;padding:30px 0;font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}@media(max-width:720px){nav{display:none}.hero-grid,.samplegrid,.grid{grid-template-columns:1fr}.hero{padding:55px 0}form{grid-template-columns:1fr}.full{grid-column:auto}}
-</style></head>
+:root{--navy:#10243a;--blue:#1769aa;--ink:#172536;--muted:#64748b;--bg:#f5f8fc;--line:#e2e8f0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.65 Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1100px,92%);margin:auto}
+header{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;color:var(--navy);font-size:18px}
+.brand span{color:var(--blue)}
+nav{display:flex;gap:20px;font-size:14px}
+.btn{display:inline-block;background:var(--blue);color:white;padding:12px 19px;border-radius:8px;font-weight:bold;border:0;cursor:pointer}
+.btn:hover{background:#0f568f}
+.hero{background:linear-gradient(120deg,#10243a,#174e78);color:white;padding:75px 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.eyebrow{color:#9dd9ff;text-transform:uppercase;font-size:12px;font-weight:800;letter-spacing:1.4px}
+h1{font-size:clamp(36px,5vw,56px);line-height:1.1;margin:14px 0 18px}
+.hero p{color:#d9e8f5;font-size:18px}
+.panel,.card{background:white;border:1px solid var(--line);border-radius:14px;padding:24px}
+.hero .panel{color:var(--ink)}
+.tick{margin:10px 0;color:#334155}
+.tick b{color:#087e65;margin-right:8px}
+section{padding:65px 0}
+.head{text-align:center;max-width:700px;margin:0 auto 35px}
+h2{font-size:32px;line-height:1.2;color:var(--navy);margin:0 0 10px}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card h3{color:var(--navy);margin:0 0 8px}
+.price{font-size:36px;font-weight:800;color:var(--navy);margin:8px 0}
+.card ul{padding-left:20px;color:#475569;min-height:110px;font-size:14px}
+.card .btn{width:100%;text-align:center}
+.featured{border:2px solid var(--blue)}
+.pricing{background:#f0f5fa}
+.sample{background:#eaf3fa}
+.samplegrid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.table{background:white;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px}
+.tr{display:grid;grid-template-columns:1.1fr 1fr .8fr;padding:12px;border-bottom:1px solid var(--line);gap:8px}
+.tr:first-child{font-weight:bold;background:#f1f6fb}
+.formbox{max-width:780px;margin:auto;background:white;border:1px solid var(--line);border-radius:14px;padding:25px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+label{display:block;font-size:13px;font-weight:bold;margin-bottom:5px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font:inherit;background:white}
+textarea{min-height:130px;resize:vertical}
+.full{grid-column:1/-1}
+.note{font-size:12px;color:var(--muted)}
+.status{font-size:13px;color:var(--blue);min-height:20px}
+.warning{margin:22px auto 0;padding:15px;border:1px solid #f0d69b;background:#fff8e8;color:#75531c;border-radius:9px;font-size:13px;max-width:780px}
+footer{background:var(--navy);color:#d8e4ee;padding:30px 0;font-size:13px}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:white;text-decoration:underline}
+@media(max-width:760px){
+nav{display:none}
+.hero-grid,.samplegrid,.grid{grid-template-columns:1fr}
+.hero{padding:55px 0}
+form{grid-template-columns:1fr}
+.full{grid-column:auto}
+}
+</style>
+</head>
+
 <body>
-<header><div class="wrap nav"><a class="brand" href="#top">CHINA <span>SUPPLIER</span> FINDER</a><nav><a href="#how">How it works</a><a href="#services">Services</a><a href="#sample">Deliverables</a><a href="#request">Request a search</a></nav><a class="btn" href="#request">Get a quote</a></div></header>
+<header>
+<div class="wrap nav">
+<a class="brand" href="#top">CHINA <span>SUPPLIER</span> FINDER</a>
+<nav>
+<a href="#how">How it works</a>
+<a href="#services">Services</a>
+<a href="#sample">Deliverables</a>
+<a href="#request">Request a search</a>
+</nav>
+<a class="btn" href="#request">Get a quote</a>
+</div>
+</header>
+
 <main id="top">
-<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">China supplier research for global buyers</div><h1>Find Chinese suppliers.<br>Save research time.</h1><p>Tell us what you want to source. We research publicly available supplier information in China and organize the results into a clear, easy-to-review spreadsheet.</p><a class="btn" href="#request">Request a supplier search</a></div><div class="panel"><h3>What you receive</h3><div class="tick"><b>✓</b> Company name and location</div><div class="tick"><b>✓</b> Official website and product category</div><div class="tick"><b>✓</b> Public business contact details, where available</div><div class="tick"><b>✓</b> Source links and research date</div><div class="tick"><b>✓</b> Organized Excel / CSV supplier list</div></div></div></section>
-<section id="how"><div class="wrap"><div class="head"><h2>A simple research process</h2><p class="muted">A clear, fixed-scope service for buyers who need an initial supplier shortlist.</p></div><div class="grid"><div class="card"><h3>01. Tell us your requirements</h3><p class="muted">Share the product, specifications, target market and preferred supplier type.</p></div><div class="card"><h3>02. We research public sources</h3><p class="muted">We search accessible company websites and public business listings, then record source links.</p></div><div class="card"><h3>03. Receive your supplier list</h3><p class="muted">We deliver an organized spreadsheet so you can review and contact potential suppliers.</p></div></div></div></section>
-<section id="services" style="background:#f0f5fa"><div class="wrap"><div class="head"><h2>Simple service packages</h2><p class="muted">Introductory prices. Scope, availability and delivery time are confirmed before work begins.</p></div><div class="grid"><div class="card"><div class="eyebrow" style="color:#1769aa">Basic</div><div class="price">$10</div><p class="muted">A focused initial search.</p><ul><li>Up to 5 supplier records</li><li>Company and product details</li><li>Website / source links</li><li>Excel or CSV delivery</li></ul><a class="btn choose" data-pack="Basic - $10" href="#request">Choose Basic</a></div><div class="card featured"><div class="eyebrow" style="color:#1769aa">Standard</div><div class="price">$25</div><p class="muted">A broader supplier shortlist.</p><ul><li>Up to 15 supplier records</li><li>Public contacts, if available</li><li>Location and product category</li><li>Source links and research date</li></ul><a class="btn choose" data-pack="Standard - $25" href="#request">Choose Standard</a></div><div class="card"><div class="eyebrow" style="color:#1769aa">Premium</div><div class="price">$50</div><p class="muted">A larger desk-research list.</p><ul><li>Up to 30 supplier records</li><li>Consistent spreadsheet structure</li><li>Public contacts, if available</li><li>Source links and research date</li></ul><a class="btn choose" data-pack="Premium - $50" href="#request">Choose Premium</a></div></div><p class="note">Prices are introductory examples, not a guarantee of supplier availability or suitability. Complex technical research may require a separate quote.</p></div></section>
-<section id="sample" class="sample"><div class="wrap samplegrid"><div><div class="eyebrow" style="color:#1769aa">Organized deliverables</div><h2>Research you can review</h2><p class="muted">Supplier records are organized with source links for key details, helping you carry out your own due diligence.</p><p class="note">The table is an illustrative layout only. It does not represent verified suppliers or completed client research.</p></div><div class="table"><div class="tr"><span>Company</span><span>Product</span><span>Source</span></div><div class="tr"><span>Example Supplier A</span><span>Home goods</span><span>Website</span></div><div class="tr"><span>Example Supplier B</span><span>Metal parts</span><span>Directory</span></div><div class="tr"><span>Example Supplier C</span><span>Electronics</span><span>Website</span></div></div></div></section>
-<section id="request"><div class="wrap"><div class="head"><h2>Request a supplier search</h2><p class="muted">Describe your requirements. We will confirm the scope and price before starting.</p></div><div class="formbox"><form id="requestForm"><div><label for="name">Your name *</label><input id="name" required placeholder="Your name"></div><div><label for="email">Email address *</label><input id="email" type="email" required placeholder="you@example.com"></div><div><label for="product">Product to source *</label><input id="product" required placeholder="e.g. stainless steel bottles"></div><div><label for="package">Package</label><select id="package"><option>Basic - $10</option><option selected>Standard - $25</option><option>Premium - $50</option><option>Not sure - please advise</option></select></div><div class="full"><label for="details">Requirements and specifications *</label><textarea id="details" required placeholder="Specifications, target quantity, preferred region, required certificates and other details."></textarea></div><div class="full"><button class="btn" type="submit">Prepare email request</button><p class="note">This first-version form opens your email application. It does not store submissions online or process payments.</p><p class="note" id="status" aria-live="polite"></p></div></form></div><div class="warning"><strong>Important:</strong> This is desk research based on publicly available information. We do not certify, audit, inspect or guarantee suppliers, products, factories, prices, compliance status or transactions. Buyers should independently verify suppliers, request samples and conduct appropriate due diligence before payment or purchase.</div></div></section>
-</main><footer><div class="wrap foot"><div><strong>China Supplier Finder</strong><br>Independent Chinese supplier desk research.</div><div>Contact: <span id="contact">tietouwaxs@gmail.com</span><br><span class="note" style="color:#bdcbd8">Replace the placeholder email before publishing.</span></div><div>© <span id="year"></span> China Supplier Finder</div></div></footer>
+
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<div class="eyebrow">China supplier research for global buyers</div>
+<h1>Find Chinese suppliers.<br>Save research time.</h1>
+<p>Tell us what you want to source. We research publicly available supplier information in China and organize the results into a clear, easy-to-review spreadsheet.</p>
+<a class="btn" href="#request">Request a supplier search</a>
+</div>
+<div class="panel">
+<h3>What you receive</h3>
+<div class="tick"><b>✓</b> Company name and location</div>
+<div class="tick"><b>✓</b> Official website and product category</div>
+<div class="tick"><b>✓</b> Public business contacts, where available</div>
+<div class="tick"><b>✓</b> Source links and research date</div>
+<div class="tick"><b>✓</b> Organized Excel / CSV supplier list</div>
+</div>
+</div>
+</section>
+
+<section id="how">
+<div class="wrap">
+<div class="head">
+<h2>A simple research process</h2>
+<p class="muted">A clear, fixed-scope service for buyers who need an initial supplier shortlist.</p>
+</div>
+<div class="grid">
+<div class="card">
+<h3>01. Tell us your requirements</h3>
+<p class="muted">Share the product, specifications, target market and preferred supplier type.</p>
+</div>
+<div class="card">
+<h3>02. We research public sources</h3>
+<p class="muted">We search accessible company websites and public business listings, then record source links.</p>
+</div>
+<div class="card">
+<h3>03. Receive your supplier list</h3>
+<p class="muted">We deliver an organized spreadsheet so you can review and contact potential suppliers.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services" class="pricing">
+<div class="wrap">
+<div class="head">
+<h2>Simple service packages</h2>
+<p class="muted">Introductory prices. Scope, availability and delivery time are confirmed before work begins.</p>
+</div>
+<div class="grid">
+<div class="card">
+<div class="eyebrow" style="color:#1769aa">BASIC</div>
+<div class="price">$10</div>
+<p class="muted">A focused initial search.</p>
+<ul>
+<li>Up to 5 supplier records</li>
+<li>Company and product details</li>
+<li>Website and source links</li>
+<li>Excel or CSV delivery</li>
+</ul>
+<a class="btn choose" data-pack="Basic - $10" href="#request">Choose Basic</a>
+</div>
+
+<div class="card featured">
+<div class="eyebrow" style="color:#1769aa">STANDARD</div>
+<div class="price">$25</div>
+<p class="muted">A broader supplier shortlist.</p>
+<ul>
+<li>Up to 15 supplier records</li>
+<li>Public contacts, if available</li>
+<li>Location and product category</li>
+<li>Source links and research date</li>
+</ul>
+<a class="btn choose" data-pack="Standard - $25" href="#request">Choose Standard</a>
+</div>
+
+<div class="card">
+<div class="eyebrow" style="color:#1769aa">PREMIUM</div>
+<div class="price">$50</div>
+<p class="muted">A larger desk-research list.</p>
+<ul>
+<li>Up to 30 supplier records</li>
+<li>Consistent spreadsheet structure</li>
+<li>Public contacts, if available</li>
+<li>Source links and research date</li>
+</ul>
+<a class="btn choose" data-pack="Premium - $50" href="#request">Choose Premium</a>
+</div>
+</div>
+<p class="note">Prices are introductory examples, not a guarantee of supplier availability or suitability. Complex technical research may require a separate quote.</p>
+</div>
+</section>
+
+<section id="sample" class="sample">
+<div class="wrap samplegrid">
+<div>
+<div class="eyebrow" style="color:#1769aa">ORGANIZED DELIVERABLES</div>
+<h2>Research you can review</h2>
+<p class="muted">Supplier records are organized with source links for key details, helping you carry out your own due diligence.</p>
+<p class="note">The table is an illustrative layout only. It does not represent verified suppliers or completed client research.</p>
+</div>
+<div class="table">
+<div class="tr"><span>Company</span><span>Product</span><span>Source</span></div>
+<div class="tr"><span>Example Supplier A</span><span>Home goods</span><span>Website</span></div>
+<div class="tr"><span>Example Supplier B</span><span>Metal parts</span><span>Directory</span></div>
+<div class="tr"><span>Example Supplier C</span><span>Electronics</span><span>Website</span></div>
+</div>
+</div>
+</section>
+
+<section id="request">
+<div class="wrap">
+<div class="head">
+<h2>Request a supplier search</h2>
+<p class="muted">Describe your requirements. We will confirm the scope and price before starting.</p>
+</div>
+
+<div class="formbox">
+<form id="requestForm">
+<div>
+<label for="name">Your name *</label>
+<input id="name" name="name" required placeholder="Your name">
+</div>
+<div>
+<label for="email">Email address *</label>
+<input id="email" name="email" type="email" required placeholder="you@example.com">
+</div>
+<div>
+<label for="product">Product to source *</label>
+<input id="product" name="product" required placeholder="e.g. stainless steel bottles">
+</div>
+<div>
+<label for="package">Package</label>
+<select id="package" name="package">
+<option>Basic - $10</option>
+<option selected>Standard - $25</option>
+<option>Premium - $50</option>
+<option>Not sure - please advise</option>
+</select>
+</div>
+<div class="full">
+<label for="details">Requirements and specifications *</label>
+<textarea id="details" name="details" required placeholder="Specifications, target quantity, preferred region, required certificates and other details."></textarea>
+</div>
+<div class="full">
+<button class="btn" type="submit">Prepare email request</button>
+<p class="note">This form opens your email application. It does not store submissions online or process payments.</p>
+<p class="status" id="status" role="status" aria-live="polite"></p>
+</div>
+</form>
+</div>
+
+<div class="warning">
+<strong>Important:</strong> This is desk research based on publicly available information. We do not certify, audit, inspect or guarantee suppliers, products, factories, prices, compliance status or transactions. Buyers should independently verify suppliers, request samples and conduct appropriate due diligence before payment or purchase.
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap foot">
+<div><strong>China Supplier Finder</strong><br>Independent Chinese supplier desk research.</div>
+<div>Contact: <a id="contact" href="mailto:tietouwaxs@gmail.com">tietouwaxs@gmail.com</a><br><span class="note" style="color:#bdcbd8">Email requests are prepared in your email application.</span></div>
+<div>© <span id="year"></span> China Supplier Finder</div>
+</div>
+</footer>
+
 <script>
-// Replace the placeholder below with an email address you can access before publishing.
-const CONTACT_EMAIL='tietouwaxs@gmail.com';
-document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('contact').textContent=CONTACT_EMAIL;
-document.querySelectorAll('.choose').forEach(a=>a.addEventListener('click',()=>document.getElementById('package').value=a.dataset.pack));
-document.getElementById('requestForm').addEventListener('submit',e=>{e.preventDefault();if(CONTACT_EMAIL==='tietouwaxs@gmail.com'){document.getElementById('status').textContent='The site owner must replace the placeholder contact email in index.html before requests can be sent.';return;}let v={name:name.value.trim(),email:email.value.trim(),product:product.value.trim(),pack:document.getElementById('package').value,details:details.value.trim()};let subject=encodeURIComponent('Supplier research request - '+v.product);let body=encodeURIComponent('Name: '+v.name+'\nEmail: '+v.email+'\nProduct: '+v.product+'\nPackage: '+v.pack+'\n\nRequirements:\n'+v.details);location.href='mailto:'+CONTACT_EMAIL+'?subject='+subject+'&body='+body;});
-</script></body></html>
+'use strict';
+
+// Your business contact email
+const CONTACT_EMAIL = 'tietouwaxs@gmail.com';
+
+// Update copyright year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Update contact link
+const contactElement = document.getElementById('contact');
+contactElement.textContent = CONTACT_EMAIL;
+contactElement.href = 'mailto:' + CONTACT_EMAIL;
+
+// Select package automatically
+document.querySelectorAll('.choose').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('package').value = link.dataset.pack;
+  });
+});
+
+// Handle request form
+document.getElementById('requestForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const status = document.getElementById('status');
+
+  // Reject only an empty or actual placeholder email
+  if (!CONTACT_EMAIL || CONTACT_EMAIL === 'YOUR_EMAIL@example.com' || !CONTACT_EMAIL.includes('@')) {
+    status.textContent = 'The site owner must configure a valid contact email before requests can be prepared.';
+    return;
+  }
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const product = document.getElementById('product').value.trim();
+  const pack = document.getElementById('package').value;
+  const details = document.getElementById('details').value.trim();
+
+  const subject = encodeURIComponent('Supplier research request - ' + product);
+
+  const body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n' +
+    'Product: ' + product + '\n' +
+    'Package: ' + pack + '\n\n' +
+    'Requirements:\n' + details
+  );
+
+  status.textContent = 'Opening your email application. If nothing opens, email us directly using the contact address below.';
+
+  window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
+});
+</script>
+</body>
+</html>
