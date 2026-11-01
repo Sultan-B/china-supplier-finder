@@ -18,7 +18,7 @@
 </main><footer><div class="wrap foot"><div><strong>China Supplier Finder</strong><br>Independent Chinese supplier desk research.</div><div>Contact: <span id="contact">YOUR_EMAIL@example.com</span><br><span class="note" style="color:#bdcbd8">Replace the placeholder email before publishing.</span></div><div>© <span id="year"></span> China Supplier Finder</div></div></footer>
 <script>
 // Replace the placeholder below with an email address you can access before publishing.
-const CONTACT_EMAIL='YOUR_EMAIL@example.com';
+const CONTACT_EMAIL='tietouwaxs@gmail.com';
 document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('contact').textContent=CONTACT_EMAIL;
 document.querySelectorAll('.choose').forEach(a=>a.addEventListener('click',()=>document.getElementById('package').value=a.dataset.pack));
 document.getElementById('requestForm').addEventListener('submit',e=>{e.preventDefault();if(CONTACT_EMAIL==='YOUR_EMAIL@example.com'){document.getElementById('status').textContent='The site owner must replace the placeholder contact email in index.html before requests can be sent.';return;}let v={name:name.value.trim(),email:email.value.trim(),product:product.value.trim(),pack:document.getElementById('package').value,details:details.value.trim()};let subject=encodeURIComponent('Supplier research request - '+v.product);let body=encodeURIComponent('Name: '+v.name+'\nEmail: '+v.email+'\nProduct: '+v.product+'\nPackage: '+v.pack+'\n\nRequirements:\n'+v.details);location.href='mailto:'+CONTACT_EMAIL+'?subject='+subject+'&body='+body;});
