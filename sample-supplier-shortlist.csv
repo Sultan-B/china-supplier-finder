@@ -1,3 +1,2 @@
-Company,Location,Product Category,Official Website,Public Contact,Manufacturer Evidence,Source URL,Research Date,Research Notes
-"Example Supplier A","Example City, Zhejiang","Insulated drinkware","https://example.com","Not provided in this illustrative template","Not assessed","https://example.com","YYYY-MM-DD","Illustrative placeholder only; replace with a researched public source."
-"Example Supplier B","Example City, Guangdong","Stainless steel bottles","https://example.org","Not provided in this illustrative template","Not assessed","https://example.org","YYYY-MM-DD","Illustrative placeholder only; do not treat as a real supplier record."
+Company Name,City / Province,Product Category,Official Website,Public Contact,Product Match Evidence,Supplier Type Evidence Label,Manufacturer-Related Evidence,Product Match Score (0-5),Public Information Score (0-5),Manufacturer Evidence Score (0-5),Contact Availability Score (0-5),Specification Evidence Score (0-5),Total Research Match Score (0-25),Source URL(s),Research Date,Information Gaps,Questions to Ask,Research Notes
+,,,,,,,,,,,,,,,,,,
