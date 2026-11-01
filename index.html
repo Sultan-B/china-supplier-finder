@@ -205,6 +205,65 @@ form{grid-template-columns:1fr}
 @media(max-width:850px){.brief-grid{grid-template-columns:repeat(2,1fr)}.dossier-grid{grid-template-columns:1fr}.case-summaries{grid-template-columns:1fr}}
 @media(max-width:560px){.brief-grid{grid-template-columns:1fr}.supplier-dossier{padding:18px}.case-full-label{align-items:flex-start;flex-direction:column}.supplier-heading .btn{width:100%;text-align:center}}
 
+
+/* V6.1 visual alignment and responsive navigation */
+:root{--content-width:1120px}
+.wrap{width:min(var(--content-width),calc(100% - 48px))}
+section{padding:68px 0}
+.head{margin-bottom:32px}
+h2{letter-spacing:-.45px}
+p{margin-top:0}
+.grid{align-items:stretch;gap:20px}
+.grid>.card{height:100%;display:flex;flex-direction:column}
+.grid>.card>p:last-child{margin-bottom:0}
+.card,.panel{border-radius:14px}
+.card h3{line-height:1.3}
+.samplegrid{align-items:start}
+#free-preview .grid>.card{height:100%}
+#services .grid>.card{display:flex;flex-direction:column}
+#services .grid>.card ul{flex:1}
+#case .case-brief{padding:24px 26px}
+#case .supplier-dossier{padding:28px}
+#case .case-summaries{align-items:stretch}
+#case .case-summaries>.card{height:100%;display:flex;flex-direction:column}
+#case .case-summaries>.card .note{margin-top:auto;padding-top:12px}
+#case .case-summaries>.card>a{margin-top:8px}
+#case .dossier-main p{line-height:1.7}
+#case .dossier-main h4{padding-bottom:6px;border-bottom:1px solid var(--line)}
+#case .dossier-side{position:relative}
+#request .contact-options{align-items:stretch}
+#request .contact-option{height:100%;display:flex;flex-direction:column;align-items:flex-start}
+#request .contact-option p{flex:1;min-height:0}
+#request .contact-option .btn{margin-top:auto}
+.warning{line-height:1.65}
+.mobile-menu-toggle{display:none;background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 12px;color:var(--navy);font:600 14px Arial;cursor:pointer}
+@media(max-width:900px){
+ .wrap{width:min(100% - 36px,var(--content-width))}
+ .nav{position:relative;min-height:68px;flex-wrap:wrap}
+ .mobile-menu-toggle{display:inline-flex;align-items:center;gap:8px;margin-left:auto}
+ header .nav>nav{display:none;order:4;width:100%;padding:10px 0 16px;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+ header .nav>nav.is-open{display:flex}
+ header .nav>nav a{padding:10px 4px;border-bottom:1px solid #edf1f5}
+ .nav-cta{display:none}
+ .hero-grid{gap:26px}
+}
+@media(max-width:760px){
+ section{padding:48px 0}
+ .wrap{width:calc(100% - 32px)}
+ .head{text-align:left;margin-bottom:24px}
+ .head h2{font-size:28px}
+ .grid{gap:14px}
+ .samplegrid{gap:20px}
+ #case .supplier-dossier{padding:18px}
+ #case .case-brief{padding:18px}
+ #case .case-summaries>.card{padding:18px}
+ #case .dossier-grid{gap:18px}
+ #case .dossier-side{padding:15px}
+}
+@media(min-width:901px){
+ header .nav>nav{display:flex;flex:1;justify-content:center;gap:clamp(10px,1.35vw,20px);font-size:13px}
+}
+
 </style>
 </head>
 
@@ -213,7 +272,8 @@ form{grid-template-columns:1fr}
 <header>
 <div class="wrap nav">
 <a class="brand" href="#top">CHINA <span>SUPPLIER</span> FINDER</a>
-<nav>
+<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+<nav id="site-navigation">
 <a href="#how">How it works</a>
 <a href="#services">Services</a>
 <a href="#sample">Deliverables</a>
@@ -223,7 +283,7 @@ form{grid-template-columns:1fr}
 <a href="#methodology">Methodology</a>
 <a href="#faq">FAQ</a>
 </nav>
-<a class="btn" href="#free-preview">Free preview</a>
+<a class="btn nav-cta" href="#free-preview">Free preview</a>
 </div>
 </header>
 
@@ -639,5 +699,25 @@ document.getElementById('requestForm').addEventListener('submit', function(event
   window.location.href = 'mailto:' + contactEmail + '?subject=' + subject + '&body=' + body;
 });
 </script>
+
+<script>
+(function(){
+  const toggle=document.querySelector('.mobile-menu-toggle');
+  const nav=document.getElementById('site-navigation');
+  if(!toggle||!nav)return;
+  toggle.addEventListener('click',function(){
+    const open=toggle.getAttribute('aria-expanded')==='true';
+    toggle.setAttribute('aria-expanded',String(!open));
+    nav.classList.toggle('is-open',!open);
+  });
+  nav.addEventListener('click',function(event){
+    if(event.target.closest('a')){
+      toggle.setAttribute('aria-expanded','false');
+      nav.classList.remove('is-open');
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
