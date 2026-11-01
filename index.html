@@ -267,45 +267,23 @@ The information above is based on publicly available company website description
 <section id="request">
 <div class="wrap">
 <div class="head">
-<h2>Request a supplier search</h2>
-<p class="muted">Describe your requirements. We will confirm the scope and price before starting.</p>
+<h2>Free Supplier Research Consultation</h2>
+<p class="muted">Tell us what you are sourcing. We will review your requirements and contact you by email.</p>
 </div>
-
-<div class="formbox">
-<form id="requestForm">
-<div>
-<label for="name">Your name *</label>
-<input id="name" name="name" required placeholder="Your name">
+<div class="formbox" style="max-width:900px">
+<iframe
+  title="China Supplier Finder consultation form"
+  src="https://docs.google.com/forms/d/e/1FAIpQLSdMiiS1MtlDkCC95CrBZYX9a3sFzUiPAPuJFcHnXcduPvG07g/viewform?embedded=true"
+  style="display:block;width:100%;height:1150px;border:0"
+  loading="lazy">
+  Loading consultation form…
+</iframe>
+<p class="note" style="text-align:center">
+If the form does not appear,
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdMiiS1MtlDkCC95CrBZYX9a3sFzUiPAPuJFcHnXcduPvG07g/viewform" target="_blank" rel="noopener noreferrer">open the consultation form in a new tab</a>.
+</p>
+<p class="note" style="text-align:center">Submitting this form is a consultation request, not a paid order. A complete supplier research report is a paid service.</p>
 </div>
-<div>
-<label for="email">Email address *</label>
-<input id="email" name="email" type="email" required placeholder="you@example.com">
-</div>
-<div>
-<label for="product">Product to source *</label>
-<input id="product" name="product" required placeholder="e.g. stainless steel bottles">
-</div>
-<div>
-<label for="package">Package</label>
-<select id="package" name="package">
-<option>Basic - $10</option>
-<option selected>Standard - $25</option>
-<option>Premium - $50</option>
-<option>Not sure - please advise</option>
-</select>
-</div>
-<div class="full">
-<label for="details">Requirements and specifications *</label>
-<textarea id="details" name="details" required placeholder="Specifications, target quantity, preferred region, required certificates and other details."></textarea>
-</div>
-<div class="full">
-<button class="btn" type="submit">Prepare email request</button>
-<p class="note">This form opens your email application. It does not store submissions online or process payments.</p>
-<p class="status" id="status" role="status" aria-live="polite"></p>
-</div>
-</form>
-</div>
-
 <div class="warning">
 <strong>Important:</strong> This is desk research based on publicly available information. We do not certify, audit, inspect or guarantee suppliers, products, factories, prices, compliance status or transactions. Buyers should independently verify suppliers, request samples and conduct appropriate due diligence before payment or purchase.
 </div>
@@ -323,57 +301,7 @@ The information above is based on publicly available company website description
 
 <script>
 'use strict';
-
-// Your business contact email
-const CONTACT_EMAIL = 'tietouwaxs@gmail.com';
-
-// Update copyright year
 document.getElementById('year').textContent = new Date().getFullYear();
-
-// Update contact link
-const contactElement = document.getElementById('contact');
-contactElement.textContent = CONTACT_EMAIL;
-contactElement.href = 'mailto:' + CONTACT_EMAIL;
-
-// Select package automatically
-document.querySelectorAll('.choose').forEach(function(link) {
-  link.addEventListener('click', function() {
-    document.getElementById('package').value = link.dataset.pack;
-  });
-});
-
-// Handle request form
-document.getElementById('requestForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const status = document.getElementById('status');
-
-  // Reject only an empty or actual placeholder email
-  if (!CONTACT_EMAIL || CONTACT_EMAIL === 'YOUR_EMAIL@example.com' || !CONTACT_EMAIL.includes('@')) {
-    status.textContent = 'The site owner must configure a valid contact email before requests can be prepared.';
-    return;
-  }
-
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const product = document.getElementById('product').value.trim();
-  const pack = document.getElementById('package').value;
-  const details = document.getElementById('details').value.trim();
-
-  const subject = encodeURIComponent('Supplier research request - ' + product);
-
-  const body = encodeURIComponent(
-    'Name: ' + name + '\n' +
-    'Email: ' + email + '\n' +
-    'Product: ' + product + '\n' +
-    'Package: ' + pack + '\n\n' +
-    'Requirements:\n' + details
-  );
-
-  status.textContent = 'Opening your email application. If nothing opens, email us directly using the contact address below.';
-
-  window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
-});
 </script>
 </body>
 </html>
