@@ -106,6 +106,42 @@ form{grid-template-columns:1fr}
  #request .questionnaire-heading{padding:10px 8px}
  #request iframe{height:1650px}
 }
+
+/* Click-to-open inquiry panels */
+#request{background:linear-gradient(180deg,#eef4fa 0%,#f8fafc 100%);padding:76px 0 70px}
+#request .head{max-width:760px;margin-bottom:30px}
+#request .contact-options{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto 26px}
+#request .contact-option{background:#fff;border:1px solid #dbe5ef;border-radius:16px;padding:26px;box-shadow:0 12px 32px rgba(16,36,58,.06)}
+#request .option-label{font-size:11px;font-weight:800;letter-spacing:1.3px;color:var(--blue);margin-bottom:10px}
+#request .contact-option h3{font-size:21px;color:var(--navy);margin:0 0 8px}
+#request .contact-option p{min-height:76px}
+#request .contact-option .btn{margin-top:8px}
+#request .email-option{background:#f8fbff}
+#request .email-btn{background:#087e65}
+#request .email-btn:hover{background:#066b56}
+#request .inquiry-panel{max-width:900px;margin:20px auto 0;background:#fff;border:1px solid #dbe5ef;border-radius:18px;padding:24px;box-shadow:0 18px 48px rgba(16,36,58,.08);scroll-margin-top:90px}
+#request .inquiry-panel[hidden]{display:none}
+#request .panel-heading{text-align:center;margin-bottom:18px}
+#request .panel-heading h3{font-size:22px;color:var(--navy);margin:0 0 5px}
+#request #questionnairePanel iframe{display:block;width:100%;height:1480px;border:0;border-radius:10px;background:#fff}
+#request .form-fallback{text-align:center;margin:12px 0 0}
+#request .form-fallback a{color:var(--blue);font-weight:700;text-decoration:underline}
+#request #emailPanel form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+#request #emailPanel .full{grid-column:1/-1}
+#request #emailPanel label{display:block;font-size:13px;font-weight:bold;margin-bottom:5px}
+#request #emailPanel input,#request #emailPanel select,#request #emailPanel textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font:inherit;background:white}
+#request #emailPanel textarea{min-height:130px;resize:vertical}
+#request .warning{max-width:900px;margin:22px auto 0;line-height:1.6}
+@media(max-width:760px){
+ #request{padding:48px 0}
+ #request .contact-options{grid-template-columns:1fr;gap:14px}
+ #request .contact-option{padding:21px}
+ #request .contact-option p{min-height:0}
+ #request .inquiry-panel{padding:12px;border-radius:12px}
+ #request #questionnairePanel iframe{height:1650px}
+ #request #emailPanel form{grid-template-columns:1fr}
+ #request #emailPanel .full{grid-column:auto}
+}
 </style>
 </head>
 
@@ -310,39 +346,70 @@ The information above is based on publicly available company website description
 <div class="head">
 <div class="eyebrow">START YOUR RESEARCH</div>
 <h2>Choose how to contact us</h2>
-<p class="muted">Use the online questionnaire or send us an email. Both options are suitable for an initial supplier research request.</p>
+<p class="muted">Choose one of the two options below. The form will appear only after you select it.</p>
 </div>
 
 <div class="contact-options">
 <div class="contact-option">
 <div class="option-label">OPTION 01</div>
-<h3>Fill in the questionnaire</h3>
-<p class="muted">Best if you want to provide product details, target market, quantity and supplier requirements in a structured format.</p>
-<a class="btn" href="#supplier-questionnaire">Complete the questionnaire</a>
-<p class="note">The form opens below on this page.</p>
+<h3>Online questionnaire</h3>
+<p class="muted">Answer structured questions about your product, target market and sourcing requirements.</p>
+<button class="btn option-toggle" type="button" data-target="questionnairePanel" aria-expanded="false">Open questionnaire</button>
 </div>
-
 <div class="contact-option email-option">
 <div class="option-label">OPTION 02</div>
-<h3>Send us an email</h3>
-<p class="muted">Prefer writing freely? Email us your sourcing requirements and any questions.</p>
-<a class="btn email-btn" href="mailto:tietouwaxs@gmail.com?subject=China%20Supplier%20Research%20Request&amp;body=Hello%20China%20Supplier%20Finder%2C%0A%0AI%20am%20looking%20for%20suppliers%20for%3A%0AProduct%3A%0ATarget%20market%3A%0ASpecifications%3A%0AEstimated%20quantity%3A%0APreferred%20supplier%20type%3A%0AOther%20requirements%3A%0A%0AThank%20you.">Email us</a>
-<p class="note">Your email application will open with a prepared message.</p>
+<h3>Email request</h3>
+<p class="muted">Enter your contact details and requirements. We will prepare an email in your email application.</p>
+<button class="btn email-btn option-toggle" type="button" data-target="emailPanel" aria-expanded="false">Write an email request</button>
 </div>
 </div>
 
-<div id="supplier-questionnaire" class="questionnaire">
-<div class="questionnaire-heading">
+<div id="questionnairePanel" class="inquiry-panel" hidden>
+<div class="panel-heading">
 <h3>Supplier research questionnaire</h3>
-<p class="muted">Complete the form below. If it does not load, use the separate-page link.</p>
+<p class="muted">Complete the form below. Your answers will be submitted through Google Forms.</p>
 </div>
-<iframe
-  title="China Supplier Finder consultation form"
-  src="https://docs.google.com/forms/d/e/1FAIpQLSdMiiS1MtlDkCC95CrBZYX9a3sFzUiPAPuJFcHnXcduPvG07g/viewform?embedded=true"
-  loading="lazy">
-  Loading consultation form…
-</iframe>
-<p class="note form-fallback"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMiiS1MtlDkCC95CrBZYX9a3sFzUiPAPuJFcHnXcduPvG07g/viewform" target="_blank" rel="noopener noreferrer">Open the questionnaire in a new tab</a>.</p>
+<iframe title="China Supplier Finder consultation form" src="https://docs.google.com/forms/d/e/1FAIpQLSdMiiS1MtlDkCC95CrBZYX9a3sFzUiPAPuJFcHnXcduPvG07g/viewform?embedded=true" loading="lazy">Loading consultation form…</iframe>
+<p class="note form-fallback"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdMiiS1MtlDkCC95CrBZYX9a3sFzUiPAPuJFcHnXcduPvG07g/viewform" target="_blank" rel="noopener noreferrer">Open the questionnaire in a new tab</a> if the embedded form does not display correctly.</p>
+</div>
+
+<div id="emailPanel" class="inquiry-panel" hidden>
+<div class="panel-heading">
+<h3>Email supplier research request</h3>
+<p class="muted">Complete these fields and click “Prepare email request”.</p>
+</div>
+<form id="requestForm">
+<div>
+<label for="name">Your name *</label>
+<input id="name" name="name" required placeholder="Your name">
+</div>
+<div>
+<label for="email">Email address *</label>
+<input id="email" name="email" type="email" required placeholder="you@example.com">
+</div>
+<div>
+<label for="product">Product to source *</label>
+<input id="product" name="product" required placeholder="e.g. stainless steel bottles">
+</div>
+<div>
+<label for="package">Package</label>
+<select id="package" name="package">
+<option>Basic - $10</option>
+<option selected>Standard - $25</option>
+<option>Premium - $50</option>
+<option>Not sure - please advise</option>
+</select>
+</div>
+<div class="full">
+<label for="details">Requirements and specifications *</label>
+<textarea id="details" name="details" required placeholder="Specifications, target quantity, preferred region, required certificates and other details."></textarea>
+</div>
+<div class="full">
+<button class="btn" type="submit">Prepare email request</button>
+<p class="note">This form opens your email application. It does not store submissions online or process payments.</p>
+<p class="status" id="status" role="status" aria-live="polite"></p>
+</div>
+</form>
 </div>
 
 <div class="warning">
@@ -363,6 +430,52 @@ The information above is based on publicly available company website description
 <script>
 'use strict';
 document.getElementById('year').textContent = new Date().getFullYear();
+
+document.querySelectorAll('.option-toggle').forEach(function(button) {
+  button.addEventListener('click', function() {
+    const panel = document.getElementById(button.dataset.target);
+    const willOpen = panel.hidden;
+    document.querySelectorAll('.inquiry-panel').forEach(function(item) {
+      item.hidden = true;
+    });
+    document.querySelectorAll('.option-toggle').forEach(function(item) {
+      item.setAttribute('aria-expanded', 'false');
+    });
+    if (willOpen) {
+      panel.hidden = false;
+      button.setAttribute('aria-expanded', 'true');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+document.querySelectorAll('.choose').forEach(function(link) {
+  link.addEventListener('click', function() {
+    const packageField = document.getElementById('package');
+    if (packageField) packageField.value = link.dataset.pack;
+  });
+});
+
+document.getElementById('requestForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const status = document.getElementById('status');
+  const contactEmail = 'tietouwaxs@gmail.com';
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const product = document.getElementById('product').value.trim();
+  const pack = document.getElementById('package').value;
+  const details = document.getElementById('details').value.trim();
+  const subject = encodeURIComponent('Supplier research request - ' + product);
+  const body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n' +
+    'Product: ' + product + '\n' +
+    'Package: ' + pack + '\n\n' +
+    'Requirements:\n' + details
+  );
+  status.textContent = 'Opening your email application. If nothing opens, email us directly at ' + contactEmail + '.';
+  window.location.href = 'mailto:' + contactEmail + '?subject=' + subject + '&body=' + body;
+});
 </script>
 </body>
 </html>
