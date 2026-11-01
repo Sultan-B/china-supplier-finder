@@ -266,6 +266,144 @@ p{margin-top:0}
  header .nav>nav{display:flex;flex:1;justify-content:center;gap:clamp(10px,1.35vw,20px);font-size:13px}
 }
 
+
+/* V8.1 premium visual refinement */
+:root{
+ --navy:#0b1f33;--blue:#1769aa;--ink:#14283d;--muted:#64778a;--bg:#f5f8fb;--line:#e2eaf1;
+ --teal:#39c6b0;--content-width:1160px;
+}
+html{scroll-padding-top:90px}
+body{font-family:Inter,"Segoe UI",Arial,sans-serif;letter-spacing:-.01em;background:#f7f9fc;color:var(--ink)}
+.wrap{width:min(var(--content-width),calc(100% - 56px))}
+header{background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(218,229,238,.85);box-shadow:0 4px 24px rgba(11,31,51,.035)}
+.nav{min-height:78px}
+.brand{font-size:15px;letter-spacing:.075em;font-weight:850;white-space:nowrap}
+.brand span{color:#168b91}
+header .nav>nav a{font-weight:650;color:#536579;transition:color .2s ease}
+header .nav>nav a:hover{color:#087f83}
+.btn{background:linear-gradient(135deg,#1677b8,#12578c);border-radius:10px;padding:13px 20px;box-shadow:0 7px 18px rgba(23,105,170,.18);transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+.btn:hover{background:linear-gradient(135deg,#126ca9,#0d4c7c);transform:translateY(-2px);box-shadow:0 11px 24px rgba(23,105,170,.23)}
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:94px 0 88px;background:radial-gradient(ellipse at 78% 15%,rgba(35,137,160,.28),transparent 34%),linear-gradient(118deg,#091b2d 0%,#102d48 52%,#12415b 100%)}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.17;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(90deg,black,transparent 85%)}
+.hero-orb{position:absolute;z-index:-1;border:1px solid rgba(119,221,216,.18);border-radius:50%;pointer-events:none}
+.hero-orb-one{width:460px;height:460px;right:-150px;top:-220px;box-shadow:0 0 0 45px rgba(119,221,216,.025),0 0 0 90px rgba(119,221,216,.02)}
+.hero-orb-two{width:260px;height:260px;left:-160px;bottom:-180px;box-shadow:0 0 0 35px rgba(119,221,216,.025)}
+.hero-grid{position:relative;grid-template-columns:minmax(0,1.12fr) minmax(360px,.88fr);gap:64px}
+.hero-copy{max-width:660px}
+.hero .eyebrow{display:flex;align-items:center;gap:10px;color:#9bdedb;font-size:11px;letter-spacing:1.8px}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#55d5bd;box-shadow:0 0 0 5px rgba(85,213,189,.12)}
+.hero h1{max-width:690px;font-size:clamp(43px,5.2vw,66px);line-height:1.035;letter-spacing:-2.4px;font-weight:780;margin:24px 0 22px}
+.hero h1 em{font-style:normal;color:#72d6ca}
+.hero .hero-lead{max-width:600px;color:#d0dce7;font-size:17px;line-height:1.8}
+.hero-actions{display:flex;align-items:center;gap:23px;flex-wrap:wrap;margin-top:30px}
+.hero-primary{background:linear-gradient(135deg,#35c6ae,#168f9a);box-shadow:0 10px 26px rgba(25,179,164,.2);padding:15px 22px}
+.hero-primary:hover{background:linear-gradient(135deg,#2ab49e,#117b88);box-shadow:0 13px 28px rgba(25,179,164,.27)}
+.hero-primary span{font-size:18px;margin-left:9px}
+.hero-secondary{color:#e4f1f5;font-size:14px;font-weight:700;padding:10px 0;border-bottom:1px solid rgba(220,242,244,.45)}
+.hero-secondary:hover{color:#72d6ca;border-color:#72d6ca}
+.hero-assurance{display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:#b8cbd8;font-size:12px;margin-top:27px}
+.assurance-icon{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:50%;background:rgba(66,202,175,.16);color:#7be0c8;font-weight:900}
+.assurance-separator{color:#6c8a9d}
+.hero-visual{position:relative;padding:27px 27px 20px;border:1px solid rgba(189,224,230,.25);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.055));box-shadow:0 28px 80px rgba(0,0,0,.2);backdrop-filter:blur(12px);transform:translateY(5px)}
+.visual-topline{display:flex;align-items:center;gap:9px;color:#a9c5d2;font-size:9px;font-weight:800;letter-spacing:1.5px}
+.visual-dot{width:7px;height:7px;border-radius:50%;background:#55d5bd;box-shadow:0 0 0 4px rgba(85,213,189,.13)}
+.visual-code{margin-left:auto;color:#7f9eaf}
+.visual-title{font-size:30px;line-height:1.13;letter-spacing:-1px;color:#fff;font-weight:760;margin:28px 0 8px}
+.visual-title span{color:#77d9cd}
+.visual-subtitle{font-size:12px;color:#b7cbd6;margin-bottom:22px}
+.visual-record{padding:8px 16px;border:1px solid rgba(213,234,238,.16);border-radius:13px;background:rgba(5,23,39,.32)}
+.record-head{display:flex;justify-content:space-between;gap:10px;padding:9px 0 12px;color:#87a6b5;font-size:9px;font-weight:800;letter-spacing:1.2px}
+.record-status{color:#6ed8c2}
+.record-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-top:1px solid rgba(213,234,238,.12)}
+.record-icon{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:8px;background:rgba(116,204,206,.13);color:#8de0d5;font-size:10px;font-weight:800}
+.record-row strong,.record-row small{display:block}
+.record-row strong{color:#f0f6f8;font-size:12px;font-weight:700}
+.record-row small{color:#9fb5c2;font-size:10px;margin-top:3px}
+.record-check{margin-left:auto;color:#70d9c4;font-size:15px;font-weight:800}
+.visual-foot{display:flex;justify-content:space-between;gap:10px;margin-top:18px;color:#86a5b4;font-size:8px;font-weight:800;letter-spacing:1.1px}
+section{padding:78px 0}
+.head{max-width:740px;margin-bottom:38px}
+.head .eyebrow{color:#168c91}
+h2{font-size:clamp(29px,3.2vw,38px);letter-spacing:-1.1px;font-weight:760}
+.muted{line-height:1.75}
+.card,.panel{border-radius:17px;border-color:#e1e9f0;box-shadow:0 9px 28px rgba(18,43,66,.045);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.grid>.card:hover{transform:translateY(-4px);box-shadow:0 17px 38px rgba(18,43,66,.09);border-color:#c8dce7}
+.card h3{letter-spacing:-.3px}
+#how{background:#fff}
+#how .grid>.card{padding:27px}
+#how .grid>.card:before{content:"";display:block;width:34px;height:3px;border-radius:3px;background:linear-gradient(90deg,#1b9d9c,#69d5c1);margin-bottom:19px}
+#services{background:linear-gradient(180deg,#f4f8fb,#edf3f8)}
+#services .head .muted{max-width:620px;margin:auto}
+#services .card{padding:28px 25px}
+#services .featured{position:relative;border:1.5px solid #238c9b;box-shadow:0 16px 38px rgba(19,113,131,.12);background:linear-gradient(180deg,#fff,#f8fcfd)}
+#services .featured:before{content:"BEST FOR FIRST COMPARISON";display:inline-block;align-self:flex-start;margin:-2px 0 14px;padding:6px 9px;border-radius:5px;background:#e5f5f2;color:#087b77;font-size:9px;font-weight:850;letter-spacing:1px}
+#services .price{font-size:43px;letter-spacing:-1.8px}
+#services .card ul{line-height:1.8;min-height:150px}
+#services .card li::marker{color:#15978f}
+#services .card .btn{margin-top:12px}
+#sample{background:#fff}
+#sample .table{border-radius:14px;box-shadow:0 12px 30px rgba(18,43,66,.05)}
+#sample .tr{padding:15px 17px;line-height:1.5}
+#sample .tr:first-child{color:#344b60;background:#f1f6f9;font-size:11px;text-transform:uppercase;letter-spacing:.8px}
+#sample .tr a{color:#126c9e;font-weight:750}
+#sample .tr a:hover{text-decoration:underline}
+#case{background:#f4f8fb}
+#case .case-brief,#case .supplier-dossier{border-radius:17px;box-shadow:0 10px 32px rgba(18,43,66,.055)}
+#case .case-brief{border-color:#dfe8ef}
+#case .supplier-dossier{border-color:#dfe8ef}
+#case .dossier-side{border-radius:12px;background:#f1f6f8}
+#case .evidence-pill{background:#e3f4ee;color:#17634f}
+#free-preview{background:linear-gradient(135deg,#0d2a40,#104d5a);color:#fff}
+#free-preview .head h2{color:#fff}
+#free-preview .head .muted{color:#c4d8df}
+#free-preview .head .eyebrow{color:#77d9cd}
+#free-preview .card{border-color:rgba(255,255,255,.16);box-shadow:0 14px 34px rgba(0,0,0,.12)}
+#free-preview .card h3{font-size:17px}
+#free-preview .card li{line-height:1.8}
+#free-preview .note{color:#bfd3dc}
+#free-preview .btn{background:linear-gradient(135deg,#35c6ae,#168f9a)}
+#methodology{background:#fff}
+#about{background:#f5f8fb}
+#faq{background:#f1f6f9}
+#faq .faq-grid .card{padding:24px}
+#faq .faq-grid h3{font-size:16px}
+#request{background:linear-gradient(180deg,#edf4f8,#f8fafc);padding:82px 0}
+#request .contact-option,#request .inquiry-panel{border-radius:16px;box-shadow:0 12px 32px rgba(18,43,66,.06)}
+#request .option-label{color:#128b8b}
+#request .package-selection-note{border-color:#b4e0d7;background:#eaf8f4;color:#116c64}
+footer{background:#081a2a;border-top:1px solid rgba(255,255,255,.08)}
+footer a:hover{color:#77d9cd}
+:focus-visible{outline:3px solid #45cdb7;outline-offset:4px}
+@media(max-width:900px){
+ .hero{padding:72px 0 66px}
+ .hero-grid{grid-template-columns:1fr;gap:38px}
+ .hero-copy{max-width:760px}
+ .hero-visual{max-width:620px;width:100%;margin:0 auto}
+}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 36px)}
+ section{padding:55px 0}
+ .nav{min-height:68px}
+ .brand{font-size:13px}
+ .hero{padding:60px 0 54px}
+ .hero h1{font-size:clamp(39px,11vw,53px);letter-spacing:-1.7px}
+ .hero .hero-lead{font-size:15px}
+ .hero-actions{align-items:flex-start;gap:14px;flex-direction:column}
+ .hero-primary{width:100%;text-align:center}
+ .hero-assurance{line-height:1.7}
+ .hero-visual{padding:21px 17px 17px;border-radius:16px}
+ .visual-title{font-size:27px}
+ .record-row{gap:9px}
+ .record-row small{font-size:9px}
+ #services .card{padding:23px 20px}
+ #services .card ul{min-height:0}
+ #services .featured{transform:none}
+ #request{padding:55px 0}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
+
 </style>
 </head>
 
@@ -287,25 +425,28 @@ p{margin-top:0}
 
 <main id="top">
 
-<section class="hero">
+<section class="hero" id="top">
+<div class="hero-orb hero-orb-one" aria-hidden="true"></div><div class="hero-orb hero-orb-two" aria-hidden="true"></div>
 <div class="wrap hero-grid">
-<div>
-<div class="eyebrow">China supplier research for global buyers</div>
-<h1>China Supplier Research for Global Buyers</h1>
-<p>Find potential Chinese suppliers through structured public-source research. We organize company-published information, product evidence, public contacts and source links so your team can decide whom to investigate further.</p>
-<p class="note" style="color:#d9e8f5"><strong>Public-source desk research only.</strong> We do not verify business licences, factory ownership or operations, certificates, production capacity, product quality or transaction safety. No factory inspection or audit is performed.</p>
-<a class="btn" href="#free-preview">Request a free preview</a>
+<div class="hero-copy">
+<div class="eyebrow"><span class="eyebrow-dot"></span> INDEPENDENT CHINA SUPPLIER RESEARCH</div>
+<h1>Find the right Chinese suppliers to <em>investigate next.</em></h1>
+<p class="hero-lead">Make your sourcing shortlist with more clarity. We organize public company information, product fit, available contacts and source links into a practical research report.</p>
+<div class="hero-actions"><a class="btn hero-primary" href="#request">Discuss your sourcing project <span aria-hidden="true">→</span></a><a class="hero-secondary" href="#sample">Explore a research example <span aria-hidden="true">↗</span></a></div>
+<div class="hero-assurance"><span class="assurance-icon">✓</span> One complimentary supplier preview for qualified requests <span class="assurance-separator">·</span> Packages from $10</div>
 </div>
-<div class="panel">
-<span class="tag">CLEAR SCOPE · SOURCE-LINKED RESEARCH</span>
-<h3 style="margin-top:14px">What your shortlist includes</h3>
-<div class="tick"><b>✓</b> Company name and location</div>
-<div class="tick"><b>✓</b> Official website and product category</div>
-<div class="tick"><b>✓</b> Public business contacts, where available</div>
-<div class="tick"><b>✓</b> Source links and research date</div>
-<div class="tick"><b>✓</b> Product-fit notes and evidence grading</div>
-<div class="tick"><b>✓</b> Questions to ask shortlisted suppliers</div>
-<div class="tick"><b>✓</b> Organized Excel / CSV research report</div>
+<div class="hero-visual">
+<div class="visual-topline"><span class="visual-dot"></span> RESEARCH SNAPSHOT <span class="visual-code">CSF / 01</span></div>
+<div class="visual-title">Supplier research,<br><span>made clearer.</span></div>
+<div class="visual-subtitle">A structured view of publicly available information.</div>
+<div class="visual-record">
+<div class="record-head"><span>RESEARCH RECORD</span><span class="record-status">PUBLIC SOURCES</span></div>
+<div class="record-row"><span class="record-icon">01</span><div><strong>Company profile</strong><small>Location · Website · Product range</small></div><span class="record-check">✓</span></div>
+<div class="record-row"><span class="record-icon">02</span><div><strong>Product fit</strong><small>Requirements · Public product details</small></div><span class="record-check">✓</span></div>
+<div class="record-row"><span class="record-icon">03</span><div><strong>Evidence & source links</strong><small>Company claims · Research notes</small></div><span class="record-check">↗</span></div>
+<div class="record-row"><span class="record-icon">04</span><div><strong>Information gaps</strong><small>What still needs buyer verification</small></div><span class="record-check">!</span></div>
+</div>
+<div class="visual-foot"><span>INDEPENDENT DESK RESEARCH</span><span>NOT A FACTORY AUDIT</span></div>
 </div>
 </div>
 </section>
